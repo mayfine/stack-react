@@ -3,10 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
 import ClickCounter from './Count.js';
-import flexDemo from './flux-demo/index.js';
 import * as serviceWorker from './serviceWorker';
-
-console.log(flexDemo);
 
 ReactDOM.render(<ClickCounter />, document.getElementById('root'));
 
