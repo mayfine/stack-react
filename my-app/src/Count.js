@@ -11,10 +11,15 @@ class Count extends Component {
     render() {
         return (
             <div>
-                <ControlPanel caption="First" />
-                <ControlPanel caption="Second" initValue={10} />
+                <ControlPanel caption="First" onUpdate={this.updateState} />
+                <ControlPanel caption="Second" onUpdate={this.updateState} initValue={10} />
             </div>
         );
+    }
+
+    updateState (p, n) {
+        console.log(p);
+        console.log(n);
     }
 }
 

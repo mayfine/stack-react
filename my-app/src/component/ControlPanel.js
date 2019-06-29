@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import action from '../flux-demo';
+import store from '../flux-demo/store';
 
 class ControlPanel extends Component {
     constructor (props) {
@@ -25,13 +27,21 @@ class ControlPanel extends Component {
 
     add () {
         this.setState({ count: this.state.count + 1 });
+
+        action();
+
+        console.log(store);
     }
 
     increment () {
 
         // this.state.count--;
+        // this.forceUpdate();
+        
         this.setState({ count: this.state.count - 1 });
-        this.forceUpdate();
+
+        // 响应父子节点事件绑定
+        this.props.onUpdate(this.state.count, 666);
     }
 
     componentWillReceiveProps (nextProps) {
